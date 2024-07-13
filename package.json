@@ -1,0 +1,27 @@
+{
+  "name": "my-profolio",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
+    "@mui/icons-material": "^5.16.1",
+    "@mui/lab": "5.0.0-alpha.172",
+    "@mui/material": "^5.16.1",
+    "preact": "^10.22.0"
+  },
+  "devDependencies": {
+    "@preact/preset-vite": "^2.8.2",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.39",
+    "tailwindcss": "^3.4.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.3.1"
+  }
+}
