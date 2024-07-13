@@ -7,9 +7,17 @@ import {Button, CardActions, CardHeader} from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import {Carousel} from "react-responsive-carousel";
 
+interface Repositories {
+    description: string,
+    html_url: string,
+    language: string,
+    name: string,
+    pushed_at: string
+}
+
 export const Projects = () => {
 
-    const [projects, setProjects] = useState([]);
+    const [projects, setProjects] = useState<Repositories[]>([]);
 
     useEffect(() => {
         (async () => {
