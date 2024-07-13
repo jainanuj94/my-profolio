@@ -1,9 +1,10 @@
 import './app.css'
 import Typography from '@mui/material/Typography';
 import {Button, Container} from "@mui/material";
-import {WorkTimeline} from "./WorkTimeline.tsx";
+import {WorkTimeline} from "./components/WorkTimeline.tsx";
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import GitHubIcon from '@mui/icons-material/GitHub';
+import {Projects} from "./components/Projects.tsx";
 
 export const App = () => {
     return (
@@ -41,7 +42,7 @@ export const App = () => {
             <main className="p-4">
                 <Container>
                     <WorkTimeline/>
-                    {/*<Projects/>*/}
+                    <Projects/>
                 </Container>
             </main>
         </div>
