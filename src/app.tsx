@@ -1,5 +1,4 @@
 import './app.css'
-import {h} from 'preact';
 import Typography from '@mui/material/Typography';
 import {Button, Container} from "@mui/material";
 import {WorkTimeline} from "./WorkTimeline.tsx";
