@@ -22,7 +22,7 @@ export const Projects = () => {
     useEffect(() => {
         (async () => {
             const projects = await fetchRepositories('jainanuj94');
-            const sortedRepos = projects.sort((a, b) => new Date(b.pushed_at) - new Date(a.pushed_at));
+            const sortedRepos = projects.sort((a:Repositories, b:Repositories) => new Date(b.pushed_at) - new Date(a.pushed_at));
             setProjects(sortedRepos);
         })();
     }, []);
