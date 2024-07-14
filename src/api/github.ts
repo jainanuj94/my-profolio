@@ -7,7 +7,8 @@ export interface Repositories {
     html_url: string,
     language: string,
     name: string,
-    pushed_at: string
+    pushed_at: string,
+    topics: string[]
 }
 
 export const fetchRepositories = async (username: string) : Promise<Repositories[]> => {

@@ -35,25 +35,27 @@ export const WorkTimeline = () => {
             <Typography variant="h5" gutterBottom>
                 Work Experience
             </Typography>
-            <Timeline>
-                {experiences.map((exp) => (
-                    <TimelineItem key={exp.title}>
-                        <TimelineSeparator>
-                            <TimelineDot>
-                                <WorkIcon />
-                            </TimelineDot>
-                            <TimelineConnector />
-                        </TimelineSeparator>
-                        <TimelineContent>
-                            <Typography variant="h6">{exp.title}</Typography>
-                            <Typography variant="body2" color="textSecondary">
-                                {exp.company} - {exp.date}
-                            </Typography>
-                            <Typography variant="body1">{exp.description}</Typography>
-                        </TimelineContent>
-                    </TimelineItem>
-                ))}
-            </Timeline>
+            <div className={"flex justify-around"}>
+                <Timeline>
+                    {experiences.map((exp) => (
+                        <TimelineItem key={exp.title} className={"align-super"}>
+                            <TimelineSeparator>
+                                <TimelineDot>
+                                    <WorkIcon/>
+                                </TimelineDot>
+                                <TimelineConnector/>
+                            </TimelineSeparator>
+                            <TimelineContent>
+                                <Typography variant="h6">{exp.title}</Typography>
+                                <Typography variant="body2" color="textSecondary">
+                                    {exp.company} - {exp.date}
+                                </Typography>
+                                <Typography variant="body1">{exp.description}</Typography>
+                            </TimelineContent>
+                        </TimelineItem>
+                    ))}
+                </Timeline>
+            </div>
         </section>
     );
 };
