@@ -2,18 +2,10 @@ import {useEffect, useState} from 'preact/hooks';
 import Typography from '@mui/material/Typography';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
-import {fetchRepositories} from "../api/github.ts";
+import {fetchRepositories, Repositories} from "../api/github.ts";
 import {Button, CardActions, CardHeader} from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import {Carousel} from "react-responsive-carousel";
-
-interface Repositories {
-    description: string,
-    html_url: string,
-    language: string,
-    name: string,
-    pushed_at: string
-}
 
 export const Projects = () => {
 
@@ -22,7 +14,7 @@ export const Projects = () => {
     useEffect(() => {
         (async () => {
             const projects = await fetchRepositories('jainanuj94');
-            const sortedRepos = projects.sort((a:Repositories, b:Repositories) => new Date(b.pushed_at) - new Date(a.pushed_at));
+            const sortedRepos = projects.sort((a, b) => new Date(b.pushed_at).getTime() - new Date(a.pushed_at).getTime());
             setProjects(sortedRepos);
         })();
     }, []);
