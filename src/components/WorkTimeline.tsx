@@ -38,7 +38,7 @@ export const WorkTimeline = () => {
             <div className={"flex justify-around"}>
                 <Timeline>
                     {experiences.map((exp) => (
-                        <TimelineItem key={exp.title} className={"align-super"}>
+                        <TimelineItem key={exp.title}>
                             <TimelineSeparator>
                                 <TimelineDot>
                                     <WorkIcon/>
@@ -47,7 +47,7 @@ export const WorkTimeline = () => {
                             </TimelineSeparator>
                             <TimelineContent>
                                 <Typography variant="h6">{exp.title}</Typography>
-                                <Typography variant="body2" color="textSecondary">
+                                <Typography variant="body2" color="ghostwhite">
                                     {exp.company} - {exp.date}
                                 </Typography>
                                 <Typography variant="body1">{exp.description}</Typography>
