@@ -1,36 +1,55 @@
-import {Button, Container} from "@mui/material";
+import {IconButton} from "@mui/material";
 import Typography from "@mui/material/Typography";
-import LinkedInIcon from "@mui/icons-material/LinkedIn";
-import GitHubIcon from "@mui/icons-material/GitHub";
+import {DockStation} from "@/components/DockStation.tsx";
+import Brightness4Icon from '@mui/icons-material/Brightness4';
+import Brightness7Icon from '@mui/icons-material/Brightness7';
 
-export const Header = () => {
-    return (<header className="bg-custom-bg text-white p-4">
-        <Container>
-            <Typography variant="h4" gutterBottom>
-                Anuj Jain
-            </Typography>
-            <Typography variant="h6">
-                Lead Software Engineer
-            </Typography>
-            <Typography variant="body1">
-                Passionate about building high-quality software and improving development processes.
-            </Typography>
-            <div className="flex space-x-2">
-                <Button
-                    variant="contained"
-                    color="primary"
-                    startIcon={<LinkedInIcon/>}
-                    href="https://www.linkedin.com/in/anuj-jain-5300448a/"
-                    target="_blank"
-                />
-                <Button
-                    variant="contained"
-                    color="secondary"
-                    startIcon={<GitHubIcon/>}
-                    href="https://github.com/jainanuj94"
-                    target="_blank"
-                />
+interface HeaderProps {
+    onThemeToggle: () => void;
+    darkMode: boolean;
+}
+
+export const Header = ({onThemeToggle, darkMode}: HeaderProps) => {
+
+    return (
+        <header className="bg-custom-bg text-white">
+            <div className="flex items-center justify-between p-4 bg-gray-900">
+                {/* Left Div (Small 2-character logo) */}
+                <div
+                    className="flex-shrink-0 text-center w-12 h-12 flex items-center justify-center rounded-full">
+                    <Typography variant="h6">
+                        <img src="/aj.svg" alt="Logo" className="h-8"/>
+                    </Typography>
+                </div>
+
+                {/* Middle Div (Flexible, grows to fill space) */}
+                <div className="flex-grow mx-4 align-text-top">
+                    <DockStation/>
+                </div>
+
+                {/* Right Div (Small 2-character logo) */}
+                <div
+                    className="flex-shrink-0 text-center w-12 h-12 flex items-center justify-center rounded-full">
+                    <IconButton sx={{ml: 1}} onClick={onThemeToggle} color="inherit">
+                        {darkMode ? <Brightness7Icon/> : <Brightness4Icon/>}
+                    </IconButton>
+                </div>
             </div>
-        </Container>
-    </header>)
+
+
+            {/*<AppBar position="static" sx={{backgroundColor: '#10172A'}}>*/}
+            {/*    <Toolbar>*/}
+            {/*        <Typography variant="h6">*/}
+            {/*            <img src="public/aj.svg" alt="Logo" className="h-8"/>*/}
+            {/*        </Typography>*/}
+
+            {/*        <DockStation/>*/}
+
+            {/*        <IconButton sx={{ml: 1}} onClick={onThemeToggle} color="inherit">*/}
+            {/*            {darkMode ? <Brightness7Icon/> : <Brightness4Icon/>}*/}
+            {/*        </IconButton>*/}
+            {/*    </Toolbar>*/}
+            {/*</AppBar>*/}
+        </header>
+    )
 }
