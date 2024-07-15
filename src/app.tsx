@@ -18,8 +18,13 @@ export const App = () => {
         palette: {
             mode: darkMode ? 'dark' : 'light',
             background: {
-                default: darkMode ? '#10172A' : '#ffffff',
+                default: darkMode ?
+                    '#10172A'
+                    : '#ffffff'
             },
+            text: {
+                primary: darkMode ? '#ffffff' : '#10172A'
+            }
         },
     });
 
@@ -30,9 +35,9 @@ export const App = () => {
     return (
         <ThemeProvider theme={theme}>
             <CssBaseline/>
-            <div className="min-h-screen bg-gray-100">
+            <div className="min-h-screen">
                 <Header onThemeToggle={handleThemeToggle} darkMode={darkMode}/>
-                <main className="p-4 bg-custom-bg text-white">
+                <main className="p-4 mt-24">
                     <Container>
                         <WorkTimeline/>
                         <Projects/>

@@ -39,12 +39,15 @@ export const Projects = () => {
             {projectChunks.slice(0, lastChunk).map((chunk, index) => (
                 <div key={index} className="flex justify-around flex-wrap m-4">
                     {chunk.map((project) => (
-                        <ProjectCard
-                            key={project.name}
-                            title={project.name}
-                            description={project.description}
-                            tags={project.topics}
-                            link={project.html_url}/>
+                        <div key={project.name} className="flex justify-around flex-wrap m-2">
+                            <ProjectCard
+                                key={project.name}
+                                title={project.name}
+                                description={project.description}
+                                tags={project.topics}
+                                link={project.html_url}
+                            />
+                        </div>
                     ))}
                 </div>
             ))}
