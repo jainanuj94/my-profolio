@@ -1,7 +1,7 @@
 import './app.css'
 import {Container, CssBaseline, ThemeProvider} from "@mui/material";
 import {WorkTimeline} from "./components/WorkTimeline.tsx";
-import {Projects} from "./components/Projects.tsx";
+import {GitGallery} from "./components/GitGallery.tsx";
 import {Header} from "./components/Header.tsx";
 import {useEffect, useState} from "preact/hooks";
 import {createTheme} from "@mui/material/styles";
@@ -40,7 +40,7 @@ export const App = () => {
                 <main className="p-4 mt-24">
                     <Container>
                         <WorkTimeline/>
-                        <Projects/>
+                        <GitGallery/>
                     </Container>
                 </main>
             </div>
