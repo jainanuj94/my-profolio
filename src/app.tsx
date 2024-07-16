@@ -1,10 +1,11 @@
 import './app.css'
 import {Container, CssBaseline, ThemeProvider} from "@mui/material";
-import {WorkTimeline} from "./components/WorkTimeline.tsx";
-import {GitGallery} from "./components/GitGallery.tsx";
 import {Header} from "./components/Header.tsx";
 import {useEffect, useState} from "preact/hooks";
 import {createTheme} from "@mui/material/styles";
+import {LandingPage} from "@/pages";
+import {Route, Switch} from "wouter";
+import BlogPage from "@/pages/BlogPage.tsx";
 
 export const App = () => {
     const [darkMode, setDarkMode] = useState(true);
@@ -13,6 +14,15 @@ export const App = () => {
         document.title = "Anuj Jain";
     }, []);
 
+    useEffect(() => {
+        if (darkMode) {
+            document.documentElement.classList.add('dark');
+            document.documentElement.classList.remove('light');
+        } else {
+            document.documentElement.classList.remove('dark');
+            document.documentElement.classList.add('light');
+        }
+    }, [darkMode]);
 
     const theme = createTheme({
         palette: {
@@ -39,8 +49,14 @@ export const App = () => {
                 <Header onThemeToggle={handleThemeToggle} darkMode={darkMode}/>
                 <main className="p-4 mt-24">
                     <Container>
-                        <WorkTimeline/>
-                        <GitGallery/>
+                        <Switch>
+                            <Route path="/">
+                                <LandingPage/>
+                            </Route>
+                            <Route path="/blog/:name">
+                                <BlogPage/>
+                            </Route>
+                        </Switch>
                     </Container>
                 </main>
             </div>

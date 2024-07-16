@@ -1,7 +1,7 @@
 import {HomeIcon} from "lucide-react";
 import {cn} from "@/lib/utils";
 import {Dock, DockIcon} from "@/components/magicui/dock";
-import {Button, Divider, Tooltip} from "@mui/material";
+import {Divider, IconButton, Tooltip} from "@mui/material";
 import GitHubIcon from "@mui/icons-material/GitHub";
 import LinkedInIcon from "@mui/icons-material/LinkedIn";
 import EmailIcon from '@mui/icons-material/Email';
@@ -9,7 +9,7 @@ import ArticleIcon from '@mui/icons-material/Article';
 
 const DATA = {
     navbar: [
-        {href: "#", icon: HomeIcon, label: "Home"}
+        {href: "/", icon: HomeIcon, label: "Home"}
     ],
     contact: {
         social: {
@@ -45,13 +45,14 @@ export function DockStation() {
             {DATA.navbar.map((item) => (
                 <DockIcon key={item.label}>
                     <Tooltip title={item.label}>
-                        <Button
+                        <IconButton
                             href={item.href}
-                            startIcon={<item.icon className="size-4"/>}
                             className={cn(
                                 "size-12 rounded-full",
                             )}
-                        />
+                        >
+                            <item.icon className="size-4"/>
+                        </IconButton>
                     </Tooltip>
                 </DockIcon>
             ))}
@@ -59,14 +60,15 @@ export function DockStation() {
             {Object.entries(DATA.contact.social).map(([name, social]) => (
                 <DockIcon key={name}>
                     <Tooltip title={social.name}>
-                        <Button
+                        <IconButton
                             href={social.url}
-                            startIcon={<social.icon className="size-4"/>}
+                            target="_blank"
                             className={cn(
                                 "size-12 rounded-full",
                             )}
-                            target="_blank"
-                        />
+                        >
+                            <social.icon className="size-4"/>
+                        </IconButton>
                     </Tooltip>
                 </DockIcon>
             ))}
@@ -74,14 +76,15 @@ export function DockStation() {
             {Object.entries(DATA.personal).map(([name, social]) => (
                 <DockIcon key={name}>
                     <Tooltip title={social.name}>
-                        <Button
+                        <IconButton
                             href={social.url}
-                            startIcon={<social.icon className="size-4"/>}
                             className={cn(
                                 "size-12 rounded-full",
                             )}
                             target="_blank"
-                        />
+                        >
+                            <social.icon className="size-4"/>
+                        </IconButton>
                     </Tooltip>
                 </DockIcon>
             ))}
