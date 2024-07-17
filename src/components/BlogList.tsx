@@ -1,6 +1,7 @@
 import Typography from "@mui/material/Typography";
-import {Button, Card, CardContent} from "@mui/material";
+import {Button, CardContent} from "@mui/material";
 import LaunchIcon from '@mui/icons-material/Launch';
+import ShineBorder from "@/components/magicui/shine-border.tsx";
 
 export const BlogList = () => {
     const blogs = [
@@ -16,26 +17,29 @@ export const BlogList = () => {
             <div className={"flex-row justify-center"}>
                 <div className="blog-list-items flex justify-around flex-wrap m-2">
                     {blogs.map((blog) => (
-                        <Card className={"w-80"}>
-                            <CardContent>
-                                <div className="flex justify-between items-center mb-4">
-                                    <Typography variant="h6" className="text-xl font-semibold">{blog.title}</Typography>
-                                    <Button
-                                        variant="outlined"
-                                        endIcon={<LaunchIcon />}
-                                        href={`/blog/${blog.blogName}`}
-                                        sx={{ color: 'teal', borderColor: 'teal' }}
-                                    >
-                                        View
-                                    </Button>
-                                </div>
-                                <div className="flex justify-between items-center mb-4">
-                                    <Typography variant="body1">
-                                        {blog.description}
-                                    </Typography>
-                                </div>
-                            </CardContent>
-                        </Card>
+                        <ShineBorder
+                            className="cursor-pointer flex-col items-center justify-center shadow-2xl text-4xl w-80"
+                            color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
+                        >
+                                <CardContent>
+                                    <div className="flex justify-between items-center mb-4">
+                                        <Typography variant="h6" className="text-xl font-semibold">{blog.title}</Typography>
+                                        <Button
+                                            variant="outlined"
+                                            endIcon={<LaunchIcon />}
+                                            href={`/blog/${blog.blogName}`}
+                                            sx={{ color: 'teal', borderColor: 'teal' }}
+                                        >
+                                            View
+                                        </Button>
+                                    </div>
+                                    <div className="flex justify-between items-center mb-4">
+                                        <Typography variant="body1">
+                                            {blog.description}
+                                        </Typography>
+                                    </div>
+                                </CardContent>
+                        </ShineBorder>
                     ))}
                 </div>
             </div>

@@ -1,8 +1,8 @@
-import {AppBar, IconButton} from "@mui/material";
-import Typography from "@mui/material/Typography";
+import {AppBar, Avatar, IconButton} from "@mui/material";
 import {DockStation} from "@/components/DockStation.tsx";
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
+import {red} from "@mui/material/colors";
 
 interface HeaderProps {
     onThemeToggle: () => void;
@@ -12,14 +12,14 @@ interface HeaderProps {
 export const Header = ({onThemeToggle, darkMode}: HeaderProps) => {
 
     return (
-        <header className="text-white">
-            <AppBar position="fixed">
-                <div className="flex items-center justify-between p-4 bg-gray-900">
+        <header className="text-foreground">
+            <AppBar sx={{backgroundColor: 'var(--background)'}} position="fixed">
+                <div className="flex items-center justify-between p-4">
                     <div
                         className="flex-shrink-0 text-center w-12 h-12 flex items-center justify-center rounded-full">
-                        <Typography variant="h6">
-                            <img src="/aj.svg" alt="Logo" className="h-8"/>
-                        </Typography>
+                        <Avatar sx={{bgcolor: red[500]}} aria-label="recipe">
+                            AJ
+                        </Avatar>
                     </div>
 
                     <div className="flex-grow mx-4 align-text-top">
@@ -28,7 +28,7 @@ export const Header = ({onThemeToggle, darkMode}: HeaderProps) => {
 
                     <div
                         className="flex-shrink-0 text-center w-12 h-12 flex items-center justify-center rounded-full">
-                        <IconButton sx={{ml: 1}} onClick={onThemeToggle} color="inherit">
+                        <IconButton sx={{ml: 1}} onClick={onThemeToggle}>
                             {darkMode ? <Brightness7Icon/> : <Brightness4Icon/>}
                         </IconButton>
                     </div>

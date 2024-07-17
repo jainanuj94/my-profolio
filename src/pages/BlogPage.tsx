@@ -11,7 +11,7 @@ const BlogPage = () => {
         const fetchMarkdown = async () => {
             try {
                 const blogName = params.name as string;
-                const response = await fetch(`/src/blogs/${blogName}.md`);
+                const response = await fetch(`/blogs/${blogName}.md`);
                 const text = await response.text();
                 setContent(marked(text) as string);
             } catch (error) {

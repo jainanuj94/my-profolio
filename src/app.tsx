@@ -29,11 +29,11 @@ export const App = () => {
             mode: darkMode ? 'dark' : 'light',
             background: {
                 default: darkMode ?
-                    '#10172A'
+                    '#000000'
                     : '#ffffff'
             },
             text: {
-                primary: darkMode ? '#ffffff' : '#10172A'
+                primary: darkMode ? '#ffffff' : '#000000'
             }
         },
     });
