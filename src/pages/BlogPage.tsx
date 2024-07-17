@@ -20,6 +20,7 @@ const BlogPage = () => {
             }
         };
 
+        console.debug("Reading from blogs")
         fetchMarkdown();
     }, [params]);
 

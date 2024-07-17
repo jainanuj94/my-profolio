@@ -37,6 +37,7 @@
   "devDependencies": {
     "@emotion/babel-plugin": "^11.11.0",
     "@preact/preset-vite": "^2.8.2",
+    "@types/connect-history-api-fallback": "^1.5.4",
     "@types/node": "^20.14.10",
     "autoprefixer": "^10.4.19",
     "postcss": "^8.4.39",
