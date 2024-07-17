@@ -12,6 +12,10 @@ export const App = () => {
 
     useEffect(() => {
         document.title = "Anuj Jain";
+        const darkModeFromSession = sessionStorage.getItem("_darkMode") === null
+            ? true : sessionStorage.getItem("_darkMode") === 'true';
+        setDarkMode(darkModeFromSession);
+
     }, []);
 
     useEffect(() => {
@@ -39,7 +43,10 @@ export const App = () => {
     });
 
     const handleThemeToggle = () => {
-        setDarkMode((prevMode) => !prevMode);
+        setDarkMode((prevMode) => {
+            sessionStorage.setItem("_darkMode", String(!prevMode));
+            return !prevMode
+        });
     };
 
     return (

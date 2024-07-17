@@ -2,7 +2,6 @@ import {AppBar, Avatar, IconButton} from "@mui/material";
 import {DockStation} from "@/components/DockStation.tsx";
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
-import {red} from "@mui/material/colors";
 
 interface HeaderProps {
     onThemeToggle: () => void;
@@ -17,7 +16,7 @@ export const Header = ({onThemeToggle, darkMode}: HeaderProps) => {
                 <div className="flex items-center justify-between p-4">
                     <div
                         className="flex-shrink-0 text-center w-12 h-12 flex items-center justify-center rounded-full">
-                        <Avatar sx={{bgcolor: red[500]}} aria-label="recipe">
+                        <Avatar sx={{backgroundColor: 'var(--color-3)'}} aria-label="recipe">
                             AJ
                         </Avatar>
                     </div>
