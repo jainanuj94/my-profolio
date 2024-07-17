@@ -51,7 +51,7 @@ export const WorkTimeline = () => {
                         {experiences.map((exp) => (
                             <TimelineItem position="right" key={exp.title}>
                                 <TimelineSeparator>
-                                    <TimelineDot color="primary">
+                                    <TimelineDot sx={{backgroundColor: 'var(--color-2)'}}>
                                         <WorkIcon/>
                                     </TimelineDot>
                                     <TimelineConnector/>

@@ -6,7 +6,6 @@ import {createTheme} from "@mui/material/styles";
 import {LandingPage} from "@/pages";
 import {Route, Switch} from "wouter";
 import BlogPage from "@/pages/BlogPage.tsx";
-import {WorkTimeline} from "@/components/WorkTimeline.tsx";
 
 export const App = () => {
     const [darkMode, setDarkMode] = useState(true);
@@ -60,9 +59,6 @@ export const App = () => {
                         <Switch>
                             <Route path="/">
                                 <LandingPage/>
-                            </Route>
-                            <Route path="/new" >
-                                <WorkTimeline/>
                             </Route>
                             <Route path="/blog/:name">
                                 <BlogPage/>

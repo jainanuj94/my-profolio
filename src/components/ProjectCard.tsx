@@ -20,7 +20,7 @@ const ProjectCard = (cardDetails: CardDetails) => (
                         startIcon={<GitHubIcon/>}
                         href={cardDetails.link}
                         target="_blank"
-                        sx={{color: 'teal', borderColor: 'teal'}}
+                        sx={{color: 'var(--color-2)', borderColor: 'var(--color-3)'}}
                     >
                         View
                     </Button>
@@ -34,7 +34,7 @@ const ProjectCard = (cardDetails: CardDetails) => (
                     <Grid container spacing={1}>
                         {cardDetails.tags.slice(0, 4).map((tag) => (
                             <Grid item key={tag}>
-                                <Chip label={tag} sx={{backgroundColor: 'teal', color: 'white'}}/>
+                                <Chip label={tag} sx={{backgroundColor: 'var(--color-1)', color: 'white'}}/>
                             </Grid>
                         ))}
                     </Grid>
