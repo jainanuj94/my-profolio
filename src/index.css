@@ -7,7 +7,7 @@
     --color-1: #A07CFE;
     --color-2: #FE8FB5;
     --color-3: #FFBE7B;
-    --background: 0 0% 100%;
+    --background: #FFFFFF;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
     --card-foreground: 222.2 84% 4.9%;
@@ -66,6 +66,9 @@
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  },
   * {
     @apply border-border;
   }

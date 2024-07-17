@@ -1,5 +1,4 @@
-import {AppBar, Avatar, IconButton} from "@mui/material";
-import {DockStation} from "@/components/DockStation.tsx";
+import {AppBar, Avatar, Divider, IconButton, Link} from "@mui/material";
 import Brightness4Icon from '@mui/icons-material/Brightness4';
 import Brightness7Icon from '@mui/icons-material/Brightness7';
 
@@ -16,15 +15,22 @@ export const Header = ({onThemeToggle, darkMode}: HeaderProps) => {
                 <div className="flex items-center justify-between p-4">
                     <div
                         className="flex-shrink-0 text-center w-12 h-12 flex items-center justify-center rounded-full">
-                        <Avatar sx={{backgroundColor: 'var(--color-3)'}} aria-label="recipe">
-                            AJ
-                        </Avatar>
+                        <a href={"#"}>
+                            <Avatar sx={{backgroundColor: 'var(--color-3)'}} aria-label="recipe">
+                                AJ
+                            </Avatar>
+                        </a>
                     </div>
-
-                    <div className="flex-grow mx-4 align-text-top">
-                        <DockStation/>
+                    <div className="flex mx-4 justify-center items-center mb-2">
+                        <Link href="#about" underline="hover" color="#FE8FB5" className={"p-2 font-semibold"}>About
+                            Me</Link>
+                        <Divider orientation="vertical" variant="fullWidth" className="h-full"/>
+                        <Link href="#timeline" underline="hover" color="#FE8FB5" className={"p-2 font-semibold"}>Work
+                            Experience</Link>
+                        <Divider orientation="vertical" variant="fullWidth" className="h-full"/>
+                        <Link href="#blogs" underline="hover" color="#FE8FB5"
+                              className={"p-2 font-semibold"}>Blogs</Link>
                     </div>
-
                     <div
                         className="flex-shrink-0 text-center w-12 h-12 flex items-center justify-center rounded-full">
                         <IconButton sx={{ml: 1}} onClick={onThemeToggle}>

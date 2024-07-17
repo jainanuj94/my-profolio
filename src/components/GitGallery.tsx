@@ -43,7 +43,7 @@ export const GitGallery = () => {
     }
 
     return (
-        <section className="flex-4 my-8 align-middle">
+        <section id="repos" className="flex-4 my-8 align-middle">
             <Typography variant="h5" gutterBottom>
                 Git Gallery
             </Typography>

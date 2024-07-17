@@ -6,6 +6,7 @@ import {createTheme} from "@mui/material/styles";
 import {LandingPage} from "@/pages";
 import {Route, Switch} from "wouter";
 import BlogPage from "@/pages/BlogPage.tsx";
+import Footer from "@/components/Footer.tsx";
 
 export const App = () => {
     const [darkMode, setDarkMode] = useState(true);
@@ -54,7 +55,7 @@ export const App = () => {
             <CssBaseline/>
             <div className="min-h-screen">
                 <Header onThemeToggle={handleThemeToggle} darkMode={darkMode}/>
-                <main className="p-4 mt-24">
+                <main className="p-4 mt-24 mb-12">
                     <Container>
                         <Switch>
                             <Route path="/">
@@ -66,6 +67,7 @@ export const App = () => {
                         </Switch>
                     </Container>
                 </main>
+                <Footer/>
             </div>
         </ThemeProvider>
     );

@@ -10,15 +10,15 @@ export const BlogList = () => {
     ];
 
     return (
-        <section className="blog-list flex-4 my-8 align-middle">
+        <section id="blogs" className="blog-list flex-4 my-8 align-middle">
             <Typography variant="h5" gutterBottom>
                 Personal Blogs
             </Typography>
             <div className={"flex-row justify-center"}>
-                <div className="blog-list-items flex justify-around flex-wrap m-2">
+                <div className="blog-list-items flex justify-around flex-wrap m-2 mb-4">
                     {blogs.map((blog) => (
                         <ShineBorder
-                            className="cursor-pointer flex-col items-center justify-center shadow-2xl text-4xl w-80"
+                            className="cursor-pointer flex-col items-center justify-center shadow-2xl text-4xl w-80 mb-4"
                             color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
                         >
                                 <CardContent>
