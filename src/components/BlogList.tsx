@@ -5,7 +5,10 @@ import ShineBorder from "@/components/magicui/shine-border.tsx";
 
 export const BlogList = () => {
     const blogs = [
-        {title: 'My First Blog', description: 'This is my first blog for my website', blogName: 'blog1'},
+        {
+            title: 'Elastic Stack on Kubernetes (ECK) with Service Mesh (Istio)',
+            description: 'First ever blog to help folks configure elastic stack on kubernetes with service mesh.', blogName: 'blog1'
+        },
         {title: 'My Second Blog', description: 'This is my second blog for my website', blogName: 'blog2'}
     ];
 
@@ -21,24 +24,24 @@ export const BlogList = () => {
                             className="cursor-pointer flex-col items-center justify-center shadow-2xl text-4xl w-80 mb-4"
                             color={["#A07CFE", "#FE8FB5", "#FFBE7B"]}
                         >
-                                <CardContent>
-                                    <div className="flex justify-between items-center mb-4">
-                                        <Typography variant="h6" className="text-xl font-semibold">{blog.title}</Typography>
-                                        <Button
-                                            variant="outlined"
-                                            endIcon={<LaunchIcon />}
-                                            href={`/blog/${blog.blogName}`}
-                                            sx={{ color: 'teal', borderColor: 'teal' }}
-                                        >
-                                            View
-                                        </Button>
-                                    </div>
-                                    <div className="flex justify-between items-center mb-4">
-                                        <Typography variant="body1">
-                                            {blog.description}
-                                        </Typography>
-                                    </div>
-                                </CardContent>
+                            <CardContent>
+                                <div className="flex justify-between items-center mb-4">
+                                    <Typography variant="h6" className="text-xl font-semibold">{blog.title}</Typography>
+                                    <Button
+                                        variant="outlined"
+                                        endIcon={<LaunchIcon/>}
+                                        href={`/blog/${blog.blogName}`}
+                                        sx={{color: 'teal', borderColor: 'teal'}}
+                                    >
+                                        View
+                                    </Button>
+                                </div>
+                                <div className="flex justify-between items-center mb-4">
+                                    <Typography variant="body1">
+                                        {blog.description}
+                                    </Typography>
+                                </div>
+                            </CardContent>
                         </ShineBorder>
                     ))}
                 </div>

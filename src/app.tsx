@@ -7,6 +7,7 @@ import {LandingPage} from "@/pages";
 import {Route, Switch} from "wouter";
 import BlogPage from "@/pages/BlogPage.tsx";
 import Footer from "@/components/Footer.tsx";
+import ScrollToTop from "@/components/ScrollToTop.tsx";
 
 export const App = () => {
     const [darkMode, setDarkMode] = useState(true);
@@ -67,6 +68,7 @@ export const App = () => {
                         </Switch>
                     </Container>
                 </main>
+                <ScrollToTop/>
                 <Footer/>
             </div>
         </ThemeProvider>

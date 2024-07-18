@@ -15,19 +15,25 @@ export const WorkTimeline = () => {
             title: 'Lead Software Consultant',
             company: 'Thoughtworks',
             date: 'July 2020 - Present',
-            description: 'Helping clients to reduce their time to market by bringing digital transformation.',
+            description: 'Enabled clients to accelerate their time to market through digital transformation initiatives.',
         },
         {
             title: 'Software Developer',
             company: 'SAP Labs',
             date: 'Feb 2017 - July 2020',
-            description: 'Worked as a software developer on SuccessFactors module.',
+            description: 'Served as a software developer on the SuccessFactors recruiting module, aiding organizations in hiring top talent.',
         },
         {
             title: 'SAP ME/MII Consultant',
             company: 'ATOS India',
             date: 'June 2015 - Feb 2017',
-            description: 'SAP ME/MII consultant helping bridge the gap between shop floors and ERP solutions.',
+            description: 'Served as an SAP ME/MII consultant, bridging the gap between shop floors and ERP solutions.',
+        },
+        {
+            title: 'QAE Intern',
+            company: 'Amazon',
+            date: 'Jan 2014 - Jul 2014',
+            description: 'Part of the Kindle Authoring Tool team, focused on enhancing product quality through automation testing.',
         },
     ]);
 
