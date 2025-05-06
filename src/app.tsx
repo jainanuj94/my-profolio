@@ -1,4 +1,5 @@
 import './app.css'
+import { Analytics } from "@vercel/analytics/react"
 import {Container, CssBaseline, ThemeProvider} from "@mui/material";
 import {Header} from "./components/Header.tsx";
 import {useEffect, useState} from "preact/hooks";
@@ -67,6 +68,7 @@ export const App = () => {
                             </Route>
                         </Switch>
                     </Container>
+		    <Analytics/>
                 </main>
                 <ScrollToTop/>
                 <Footer/>
